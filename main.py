@@ -76,7 +76,8 @@ class LatentAttention():
         return h2
 
     def train(self):
-        visualization = self.mnist.train.next_batch(self.batch_size)[0]  # we do not need label (= [1])
+        #visualization = self.mnist.train.next_batch(self.batch_size)[0]  # we do not need label (= [1])
+        visualization = self.mnist.test.next_batch(self.batch_size)[0]  # we do not need label (= [1])
         reshaped_vis = visualization.reshape(self.batch_size, 28, 28)
 
         # get first 64 images and merge in to one image of 8 x 8 grid, and SAVE
